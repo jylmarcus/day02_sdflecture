@@ -20,8 +20,6 @@ public class MountainBike extends Bicycle {
     public void setSeatHeight(int seatHeight) {
         this.seatHeight = seatHeight;
     }
-
-    
     
     @Override
     public int hashCode() {

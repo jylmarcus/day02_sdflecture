@@ -1,16 +1,16 @@
 package sg.edu.nus.iss;
 
-public class Bicycle {
+public class Bicycle implements Startable{
     private int gear;
     private int speed;
 
     public Bicycle() {
-        
+
     }
 
     public Bicycle(int gear, int speed) {
-        this.gear = 5;
-        this.speed = 5;
+        this.gear = gear;
+        this.speed = speed;
     }
 
     public int getGear() {
@@ -29,13 +29,13 @@ public class Bicycle {
         this.speed = speed;
     }
 
-    public void applyBrake(int decreaseValue) {
-        speed = speed - decreaseValue;
-    }
+    //public void applyBrake(int decreaseValue) {
+    //    speed = speed - decreaseValue;
+    //}
 
-    public void speedUp(int increaseValue) {
-        speed += increaseValue;
-    }
+    //public void speedUp(int increaseValue) {
+    //    speed += increaseValue;
+    //}
 
     @Override
     public int hashCode() {
@@ -60,6 +60,16 @@ public class Bicycle {
         if (speed != other.speed)
             return false;
         return true;
+    }
+
+    @Override
+    public void applyBrake(int decreaseValue) {
+        speed -= decreaseValue;
+    }
+
+    @Override
+    public void speedUp(int increaseValue) {
+        speed += increaseValue;
     }
 
     
